@@ -123,6 +123,8 @@ def delete_db_list(
     id = None
 ):
     try:
+        Reply = models.MainReply.objects.filter(reply_id = id) # 해당하는 게시글에 대한 댓글 정보만 가져옴.
+        Reply.delete()
         item = models.MainBoard.objects.get(id = id)
         item.delete() # 해당하는 게시글 DB정보 삭제
         

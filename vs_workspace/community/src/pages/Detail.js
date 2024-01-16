@@ -43,6 +43,7 @@ const Detail = () =>{
 
     useEffect(()=>{
         lookDetail();
+        console.log(password)
         console.log(title+"detail");
     }, []); // Too many rerenders에러가 나타날 경우를 방지하기 위해 작성
     //setState()함수를 컴포넌트 바디에 그냥 선언해주게 되면 state가 변화될 때마다 컴포넌트가 리렌더링되고,

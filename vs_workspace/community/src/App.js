@@ -9,7 +9,7 @@ class App extends React.Component{
       <div className="dashBoard">
        <div className="sideBar">
          <div className="logo">
-           권장서
+           Military Community
            <div className="sideBarFont">
               <a href="./">홈으로</a>
            </div>

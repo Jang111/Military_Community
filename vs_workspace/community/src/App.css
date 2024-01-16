@@ -16,7 +16,7 @@
   width:300px;
   height: 100%;
   text-align:center;
-  line-height: 200px;
+  line-height: 120px;
 }
 
 /*sideBarFont*/
@@ -39,7 +39,7 @@
 .logo {
   color: white;
   font-weight: bold;
-  font-size: 46px;
+  font-size: 40px;
   text-align: center;
   vertical-align: center;
   padding : 40px;
