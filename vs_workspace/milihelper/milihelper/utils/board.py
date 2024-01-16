@@ -82,49 +82,6 @@ def look_utils_list(
             "message" : "서버에러"
         }
 
-def reply_utils_list(
-        id = None, #댓글 테이블의 id값과 컨텐츠 테이블의 id값을 비교하여 같은 id값을 찾고 해당 컨텐츠 테이블에만 댓글이 달릴 수 있도록 함
-        #파라미터 id값은 컨텐츠 테이블의 것이다.
-        comment = None
-):
-    try:
-        if not comment:
-            return {
-                "responseCode" : False,
-                "message" : "댓글 내용을 입력해주십시오."
-            }
-        seq = None
-        dt_list = None
-        print("senajndj")
-        
-        try:
-            seq = id
-            # seq = models.MainReply.objects.latest("id").id + 1
-            dt_list = list(models.MainReply.objects.all().order_by("-id").values())
-        except models.MainReply.DoesNotExist:
-            print("senajndj+error")
-            seq = 1
-        
-        reply = models.MainReply()
-        reply.reply_id = seq
-        reply.comment = comment
-        reply.save()
-        return {
-            "responseCode" : True,
-            "responseData" : {
-                "reply_id" : seq,
-                "dt_list" : refiner.result_query_refiner(dt_list),
-                "comment" : comment
-            },
-            "message" : "댓글 등록이 완료되었습니다."
-        }
-    
-    except Exception:
-        print(traceback.format_exc())
-        return {
-            "responseCode" : False,
-            "message" : "서버 에러"
-        }
 
 def updated_db_list( # 수정한 내용을 데이터베이스에 업데이트하는 API
         id = None,
@@ -166,7 +123,6 @@ def delete_db_list(
     id = None
 ):
     try:
-        print("DJNS")
         item = models.MainBoard.objects.get(id = id)
         item.delete() # 해당하는 게시글 DB정보 삭제
         
@@ -180,14 +136,64 @@ def delete_db_list(
             "responseCode": False,
             "message" : "서버에러"
         }
-# def look_reply_utils_list(
-#         id = None
-# ):
-#     try:
+    
+def reply_utils_list(
+        id = None, #댓글 테이블의 id값과 컨텐츠 테이블의 id값을 비교하여 같은 id값을 찾고 해당 컨텐츠 테이블에만 댓글이 달릴 수 있도록 함
+        #파라미터 id값은 컨텐츠 테이블의 것이다.
+        comment = None
+):
+    try:
+        if not comment:
+            return {
+                "responseCode" : False,
+                "message" : "댓글 내용을 입력해주십시오."
+            }
         
-#     except Exception:
-#         print(traceback.format.exc())
-#         return {
-#             "responseCode" : False,
-#             "message" : "댓글 조회 불가"
-#         }
+        try:
+            seq = id
+            dt_list = list(models.MainReply.objects.all().order_by("-id").values())
+
+        except models.MainReply.DoesNotExist:
+            seq = 1
+        
+        reply = models.MainReply()
+        reply.reply_id = seq
+        reply.comment = comment
+        reply.save()
+        return {
+            "responseCode" : True,
+            "responseData" : {
+                "reply_id" : seq,
+                "dt_list" : refiner.result_query_refiner(dt_list), # 날짜를 지정한 format으로 변환함
+                "comment" : comment, # 댓글 내용
+            },
+            "message" : "댓글 등록이 완료되었습니다."
+        }
+    
+    except Exception:
+        print(traceback.format_exc())
+        return {
+            "responseCode" : False,
+            "message" : "서버 에러"
+        }
+    
+def review_utils_list(
+        id = None
+):
+    try:
+        Reply = models.MainReply.objects.filter(reply_id = id) # 해당하는 게시글에 대한 댓글 정보만 가져옴.
+        Reply_list = list(Reply.order_by('-id').values())
+        print(Reply_list)
+        # print(Reply)
+        return {
+            "responseCode" : True,
+            "responseData" : {
+                "reply_list" : refiner.result_query_refiner(Reply_list)
+            }
+        }
+    except Exception:
+        print(traceback.format_exc())
+        return {
+            "responseCode" : False,
+            "message" : "댓글 조회 불가"
+        }

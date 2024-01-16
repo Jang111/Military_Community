@@ -8,6 +8,8 @@ import PWDModal from "./PWDModal";
 import PWDModal_DEL from "./PWDModal_DEL";
 import {useNavigate} from "react-router-dom";
 
+// **js파일이 렌더링될 때, 위에서부터 차례대로 렌더링되는 것이 아님. 컴포넌트별로 렌더링되는 순서가 다름
+
 const Detail = () =>{
 
     const location = useLocation();
@@ -27,21 +29,21 @@ const Detail = () =>{
     const [gpubDate, setPubDate] = useState(""); //db의 pub-date 정보 저장
     const [gcontent, setContent] = useState(""); //db의 content 정보 저장
     const [gauthor, setAuthor] = useState(""); // db의 author 정보 저장
-    const [gid, setId] = useState(0);
+    const [gid, setId] = useState(id);
     
 
-    const lookDetail = async()=>{
+    const lookDetail =()=>{
         setId(id);
         setTitle(title); // gtitle 초기화
         setPubDate(pubDate);
         setContent(content);
         setAuthor(author);
-        console.log(id+"check");
+        console.log(id);
     }
 
     useEffect(()=>{
         lookDetail();
-        console.log(title);
+        console.log(title+"detail");
     }, []); // Too many rerenders에러가 나타날 경우를 방지하기 위해 작성
     //setState()함수를 컴포넌트 바디에 그냥 선언해주게 되면 state가 변화될 때마다 컴포넌트가 리렌더링되고,
     // 컴포넌트가 리렌더링 되면서 또다시 setState가 실행된다.

@@ -29,13 +29,10 @@ const Comment = (props)=>{
             }).then((response) => {
                 const res = response.data;
                 if(res.responseCode){
-                        const resdt = res.responseData;
-                        console.log(resdt.reply_id+"ddddd");
-                        // 여기서 resdt.id는 댓글을 다려고 하는 컨텐츠 테이블의 값이 대입되어 있음
-                        // --> id값이 같은 컨텐츠 테이블(내용 테이블)에 대한 댓글만 볼 수 있도록 함
-                        copyCommentList.push(resdt.comment);
-                        setCommentList(copyCommentList);
-                        setDt_list(resdt.dt_list);
+                        // const resdt = res.responseData;
+                        // // 여기서 resdt.id는 댓글을 다려고 하는 컨텐츠 테이블의 값이 대입되어 있음
+                        // // --> id값이 같은 컨텐츠 테이블(내용 테이블)에 대한 댓글만 볼 수 있도록 함
+                        // copyCommentList.push(resdt.comment);
                         alert(res.message);
                 }else{ 
                     alert(res.message) // 서버 오류
@@ -45,9 +42,45 @@ const Comment = (props)=>{
             alert("서버 에러")
         }finally{
             setComment(""); // 댓글 등록 후 댓글 작성 textarea는 빈문자열로 초기화
+            window.location.reload();
         }
+        
 
     }
+
+    const Review = async() => {
+        const header = {
+            "Content-type" : "application/json; charset=utf-8",
+            Accept : "application/json"
+        }
+
+        const datas = {
+            id : props.gid
+        }
+       console.log(props.gid+"dsda")
+        axios.post('http://localhost:8000/review/', datas, {
+            header,
+        }).then((response)=>{
+            const res = response.data;
+            console.log(res.responseCode);
+            if(res.responseCode) {
+                const resdt = res.responseData;
+                // console.log("ddd");
+                setDt_list(resdt.reply_list); // 댓글에 관한 객체를 리스트에 저장
+                // copyCommentList.push(resdt.comment);
+                // setCommentList(copyCommentList);
+            }
+        }).catch(
+            (response) => {
+                alert(response.data.message)
+            }
+        );
+    }
+
+    useEffect(()=>{ // 데이터 가져오기를 위해 사용한 hook
+        console.log("useEffect_reply");
+        Review();//page가 변경되면 댓글 목록 요청
+    }, [])
 
     return (
         <div>
@@ -56,9 +89,10 @@ const Comment = (props)=>{
                 <table className = "tb_comm">
                     <tbody>
                     {
-                        dt_list.map((index, i) =>{
+                        dt_list.map((data, i) =>{
+                            console.log(data)
                             return (
-                                <CommentList replier = {replier} index = {index} gid = {props.gid} />
+                                <CommentList replier = {replier} data = {data} key={i + 1} />
                             )
                         })
                     }
@@ -95,13 +129,13 @@ const Comment = (props)=>{
                         </td>
                     </tr>
                     </tbody>
-                    <input 
+                    {/* <input 
                             className="input" 
                             type = "submit" 
                             value = "댓글 조회" 
-                            onClick={Registration}
+                            onClick={Review}
                             disabled={isValid ? false:true} // 사용자가 아무것도 입력하지 않았을 경우 게시 x
-                            />
+                    /> */}
                 </table>
             </div>
         </div>

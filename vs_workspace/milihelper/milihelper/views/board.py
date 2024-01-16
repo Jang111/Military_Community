@@ -7,7 +7,7 @@ from milihelper.utils.board import look_utils_list
 from milihelper.utils.board import reply_utils_list
 from milihelper.utils.board import updated_db_list
 from milihelper.utils.board import delete_db_list
-# from milihelper.utils.board import look_reply_utils_list
+from milihelper.utils.board import review_utils_list
 
 #게시글 등록
 @csrf_exempt
@@ -63,12 +63,23 @@ def delete_db(request):
             id = data.get('id', None),
         )
     )
-# @csrf_exempt : 댓글 조회 api
-# def look_reply_list(request):
-#     data = json.loads(request.body)
-#     return JsonResponse(
-#         data = look_reply_utils_list(
-#             id = data.get("id", None)
-#         )
-#     )
+
+@csrf_exempt #: 댓글 db 등록 api
+def reply_list(request):
+    data = json.loads(request.body)
+    return JsonResponse(
+        data = reply_utils_list(
+            id = data.get("id", None),
+            comment = data.get("comment",None)
+        )
+    )
+
+@csrf_exempt #: 댓글 조회 api
+def review_list(request):
+    data = json.loads(request.body)
+    return JsonResponse(
+        data = review_utils_list(
+            id = data.get("id", None)
+        )
+    )
 

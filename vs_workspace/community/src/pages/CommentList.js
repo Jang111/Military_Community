@@ -1,12 +1,15 @@
 import React, {useState} from 'react';
-
+import './CommentList.css'
 const CommentList = (props)=>{
+    console.log(props.key)
     return (
         <div>
-            {console.log(props.index.reply_id + "mmm")}
-            { (props.index.reply_id === props.gid) ? // 댓글 테이블과 컨텐츠 테이블의 id가 같은지 검사
-                 (<div>{props.replier}<br />
-                 {props.index.comment}</div>) : (alert("오류 발생"))}
+            {/* {console.log(props.index.reply_id + "mmm")} */}
+            <div>---------------------------------</div>
+            <div>{props.replier}</div>
+            <br/>
+            <textarea readOnly className="tt_reply">{props.data.comment+"\n- "+props.data.rep_date}</textarea>
+            
         </div>
     )
 }
