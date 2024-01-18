@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2bb40ab2.css",
+    "main.js": "/static/js/main.0be66da8.js",
+    "static/media/color.png": "/static/media/color.9492e6c1acfde02fdd83.png",
+    "static/media/korean-flag.jpg": "/static/media/korean-flag.a55761f32370469efb32.jpg",
+    "index.html": "/index.html",
+    "main.2bb40ab2.css.map": "/static/css/main.2bb40ab2.css.map",
+    "main.0be66da8.js.map": "/static/js/main.0be66da8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2bb40ab2.css",
+    "static/js/main.0be66da8.js"
+  ]
+}
