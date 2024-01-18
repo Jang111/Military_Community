@@ -1,7 +1,0 @@
-상황
-- 가상환경을 구동한 상태에서 db의 값들을 불러오려 할 때 프론트에서 request하는 과정에서 오류 발생
--> 알고보니 서버부분에서 ModuleNotFoundError: No module named '디렉터리이름'오류가 발생했었음
-->윈도우에서 자주 겪는 일이라는데..
--> curl https://bootstrap.pypa.io/get-pip.py get-pip.py명령어를 통해 pip를 재설치 해주었더니
-정상 작동
--> pip upgrade하면 간혹 재설치가 제대로 되지 않는 경우가 있다고 함!

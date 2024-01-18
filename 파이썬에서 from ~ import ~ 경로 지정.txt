@@ -1,4 +1,0 @@
-파이썬에서 from ~ import ~ 경로 지정
-
-예 : from a.b import method
--> 'a'디렉터리 밑의 b라는 파일에서 method라는 함수(혹은 모듈)을 사용할 것이다.
