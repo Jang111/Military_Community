@@ -1,0 +1,87 @@
+thead{
+    background-color : skyblue;
+}
+
+.content{
+    max-width:500px;
+    margin: auto;
+    padding: 10px;
+}
+
+.header{
+    text-align:center;
+}
+
+.board{
+    width: 100%
+}
+
+.even_bgcolor{
+    background-color:green;
+}
+
+.tb1{
+    border-spacing: 0px;
+    position: relative;
+    padding-left: 7%;
+    padding-top:3%;
+}
+
+.write{
+    text-align:right;
+    padding-bottom:10px;
+    padding-right:20px;
+}
+
+.number{
+    border-spacing: 0px;
+    width:4%;
+    border : 1px solid gray;
+}
+
+.tit{
+    border-spacing: 0px;
+    width:70px;
+    border : 1px solid gray;
+   
+}
+
+.date{
+    border-spacing: 0px;
+    width:20%;
+    border : 1px solid gray;
+    
+}
+
+.writer{
+    border-spacing: 0px;
+    width:20%;
+    border : 1px solid gray;
+    
+}
+
+.btn2{
+    background-color:white;
+    position:absolute;
+    top:10px;
+    left : 93%; 
+    width:70px;
+    height:30px;
+    border-width:3px;
+}
+
+/*background*/
+.background{
+    width:100%;
+    height:auto;
+    background-image:url('../korean-flag.jpg');
+    background-size:85%;
+    background-repeat: no-repeat;
+    background-position: 99% 10%;
+  }
+
+td{
+    border-spacing: 0px;
+    background-color:white;
+    border : 1px solid gray;
+}
