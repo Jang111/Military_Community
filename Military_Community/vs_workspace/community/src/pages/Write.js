@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import './Write.css'
 import Contents from './Contents';
+import crypto from "crypto-browserify";
 const Write = (data) => {
     // 초기값 : ''
     //setTitle(1)--> title = 1로 설정한다는 의미
@@ -10,7 +11,7 @@ const Write = (data) => {
     const [author, setAuthor] = useState('');
     const [password, setPassword] = useState('');
     
-    const crypto = require("crypto");
+    // const crypto = require("crypto");
 
     const insertDataValueCheck = ()=> {
         if(title === ''){
@@ -50,7 +51,7 @@ const Write = (data) => {
             password : crypto
             .createHmac('sha256', 'milihelper_key')
             .update(password)
-            .digest('hex'), // encrypt password
+            .digest('hex'), // encrypted password
         };
 
         axios.post('http://127.0.0.1:8000/Write/', datas

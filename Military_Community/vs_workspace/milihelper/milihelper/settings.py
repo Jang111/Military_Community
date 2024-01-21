@@ -96,6 +96,7 @@ DATABASES = {
         'USER' : 'root',
         'PASSWORD' : 'ty123100-',
         'HOST' : 'database-1.cb6eukqk622v.ap-northeast-2.rds.amazonaws.com',
+        # 'HOST' : 'localhost',
         'PORT' : '3306'
     }
 }
