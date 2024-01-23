@@ -4,7 +4,7 @@
     padding-top:5px;
 }
 
-.td{ /*제목, 작성자, 작성일, 내용 필드 각각에 관련한 컨텐츠 박스 크기*/
+.td{ /*제목, 작성자, 작성일, 내용 필드 각각에 관련한 컨텐츠 박스 크기.*/
     width:600px;
     height:50px;
     background-color:rgb(207, 201, 201);
