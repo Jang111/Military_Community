@@ -10,6 +10,7 @@ import Write from '../pages/Write';
 import Detail from "../pages/Detail";
 import PWDModal from "../pages/PWDModal";
 import Update from "../pages/Update";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 
 class Router extends React.Component{
     render(){
