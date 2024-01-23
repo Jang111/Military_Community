@@ -1,16 +1,16 @@
 import React from 'react';
-import {
-    BrowserRouter,
-    Routes,
-    Route,
-} from 'react-router-dom';
+// import {
+//     BrowserRouter,
+//     Routes,
+//     Route,
+// } from 'react-router-dom';
 import Home from '../pages/Home';
 import Community from '../pages/Community';
 import Write from '../pages/Write';
 import Detail from "../pages/Detail";
 import PWDModal from "../pages/PWDModal";
 import Update from "../pages/Update";
-import { HashRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as BrowserRouter,Route, Routes } from "react-router-dom";
 
 class Router extends React.Component{
     render(){
