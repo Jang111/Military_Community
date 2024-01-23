@@ -14,7 +14,7 @@ import { HashRouter as BrowserRouter,Route, Routes } from "react-router-dom";
 
 class Router extends React.Component{
     render(){
-        return (// 각 경로와 매칭될 경우에 Rendering할 react요소를 지정.
+        return (// 각 경로와 매칭될 경우에 Rendering할 react요소를 지정
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Home />} />  
