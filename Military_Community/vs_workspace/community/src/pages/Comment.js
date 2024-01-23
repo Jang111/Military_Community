@@ -8,7 +8,7 @@ const Comment = (props)=>{
     const [comment, setComment] = useState(""); // 댓글
     const [comment_list, setCommentList] = useState([]); // 댓글들의 리스트(목록)값 저장 
     const [date, setDate] = useState("");// 작성날짜
-    const [isValid, setIsVaild] = useState(false); // 댓글을 올바르게 작성하였는지 검사
+    const [isValid, setIsVaild] = useState(false); // 댓글을 올바르게 작성하였는지 검사.
     const copyCommentList = [...comment_list]; // '...' : 전개 연산자 사용 -> 1차원의 요소들만 배열로 저장하고 싶을 때 사용 
     const [dt_list, setDt_list] = useState([]); 
 
