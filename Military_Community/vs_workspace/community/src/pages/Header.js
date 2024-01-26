@@ -1,8 +1,9 @@
 import React from 'react';
 import './Header.css'
 const Header = () => {
+    console.log("AAAA");
     return(
-        <div class="rightText">
+        <div className="rightText">
             <h1>
                 커뮤니티
             </h1>

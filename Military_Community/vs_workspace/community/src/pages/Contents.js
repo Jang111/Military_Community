@@ -107,15 +107,15 @@ const Contents = () => {
             </div>
             
             <table className = "tb1">
-                <button class="btn2" onClick={handleClick}>
+                <button className="btn2" onClick={handleClick}>
                     글쓰기
                 </button>
                 <thead>
                     <tr>
-                        <th class="number">번호</th>
-                        <th class="tit">제목</th>
-                        <th class="date">작성일자</th>
-                        <th class="writer">작성자</th>
+                        <th className="number">번호</th>
+                        <th className="tit">제목</th>
+                        <th className="date">작성일자</th>
+                        <th className="writer">작성자</th>
                     </tr>
                 </thead>
                 {paging.loading && (

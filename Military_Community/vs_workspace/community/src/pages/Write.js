@@ -77,18 +77,18 @@ const Write = (data) => {
         window.location.href = "/Community";
     }
     return (
-        <div class="background">
-            <h2 class="sectionTitle">글작성</h2>
+        <div className="background">
+            <h2 className="sectionTitle">글작성</h2>
                 <div style={{paddingLeft: '4%', paddingRight:'4%'}}>
                     <h3 style={{fontSize:25, fontWeight: 'bold'}}>제목</h3>
-                    <input class="inputs" onChange={(e)=>setTitle(e.target.value)} />
+                    <input className="inputs" onChange={(e)=>setTitle(e.target.value)} />
                     <h3 style={{fontSize: 25, fontWeight: 'bold', marginTop: 10}}>
                         내용
                     </h3>
                     <textarea rows={15} class="inputs" onChange={(e)=>setContent(e.target.value)}
                     style={{resize: 'none'}}
                     />
-                    <div class="buttonDiv">
+                    <div className="buttonDiv">
                         <input 
                             placeholder="Writer"
                             onChange={(e)=>setAuthor(e.target.value)}
@@ -114,10 +114,10 @@ const Write = (data) => {
                                 borderRadius: 4,
                             }}
                         />
-                        <button class="goodButton" onClick={()=>insertData()}>
+                        <button className="goodButton" onClick={()=>insertData()}>
                             저장
                         </button>
-                        <button class="badButton" onClick={handleClick}>
+                        <button className="badButton" onClick={handleClick}>
                             닫기
                         </button>
                     </div>

@@ -9,10 +9,10 @@ const Home = () => {
     return(
             <div className="background">
                 <div className="dashBoard">
-                    <button class="btn">복지</button>
-                    <button class="btn">계획표</button>
-                    <button class="btn" onClick={handleClick}>커뮤니티</button> 
-                    <button class="btn">마이페이지</button>
+                    <button className="btn">복지</button>
+                    <button className="btn">계획표</button>
+                    <button className="btn" onClick={handleClick}>커뮤니티</button> 
+                    <button className="btn">마이페이지</button>
                 </div>
             </div>
     )

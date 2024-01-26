@@ -8,11 +8,12 @@ const Community = () => {
     axios.defaults.xsrfCookieName = "csrftoken";
     axios.defaults.xsrfHeaderName="X-CSRFToken";
     // axios.defaults.headers.common["X-CSRFToken"] = getCookie("csrftoken");    
+    console.log("dddd")
     return(
-        <div class="background">
-            <div class="dashBoard">
+        <div className="background">
+            <div className="dashBoard">
                 <Header />
-                <Contents/>
+                <Contents />
             </div>
         </div>
     )    
