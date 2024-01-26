@@ -24,7 +24,8 @@
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
     "predeploy": "CI= npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "homepage":"https://jang111.github.io/milihelper_Front/"
   },
   "eslintConfig": {
     "extends": [
