@@ -17,12 +17,12 @@ class Router extends React.Component{
         return (// 각 경로와 매칭될 경우에 Rendering할 react요소를 지정
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<Home />} />  
-                    <Route path="/Community" element={<Community />} />
-                    <Route path="/Write" element={<Write />} />
-                    <Route path="/Detail" element={<Detail />} /> 
-                    <Route path="/PWDModal" element = {<PWDModal />}/>
-                    <Route path="/Update" element = {<Update />}/>
+                    <Route path={"/"} element={<Home />} />  
+                    <Route path={"/Community"} element={<Community />} />
+                    <Route path={"/Write"} element={<Write />} />
+                    <Route path={"/Detail"} element={<Detail />} /> 
+                    <Route path={"/PWDModal"} element = {<PWDModal />}/>
+                    <Route path={"/Update"} element = {<Update />}/>
                 </Routes>
             </BrowserRouter>
         )
