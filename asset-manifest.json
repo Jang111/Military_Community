@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Jang111/Military_Community/static/css/main.c1f185c4.css",
+    "main.js": "/Jang111/Military_Community/static/js/main.59d8bd94.js",
+    "static/js/787.e5f585a1.chunk.js": "/Jang111/Military_Community/static/js/787.e5f585a1.chunk.js",
+    "static/media/color.png": "/Jang111/Military_Community/static/media/color.9492e6c1acfde02fdd83.png",
+    "static/media/korean-flag.jpg": "/Jang111/Military_Community/static/media/korean-flag.a55761f32370469efb32.jpg",
+    "index.html": "/Jang111/Military_Community/index.html",
+    "main.c1f185c4.css.map": "/Jang111/Military_Community/static/css/main.c1f185c4.css.map",
+    "main.59d8bd94.js.map": "/Jang111/Military_Community/static/js/main.59d8bd94.js.map",
+    "787.e5f585a1.chunk.js.map": "/Jang111/Military_Community/static/js/787.e5f585a1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c1f185c4.css",
+    "static/js/main.59d8bd94.js"
+  ]
+}
